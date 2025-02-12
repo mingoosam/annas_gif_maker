@@ -180,6 +180,11 @@ async def download_gif(gif_path: str, start: float = None, end: float = None):
 async def download_selected(gifs: List[GifDownloadRequest]):
     """Create a zip file of selected GIFs"""
     try:
+        # Log incoming request data
+        logger.info(f"Received download request for {len(gifs)} GIFs")
+        for gif in gifs:
+            logger.info(f"Processing GIF: {gif.url} (start: {gif.start}, end: {gif.end})")
+        
         # Create temporary zip file
         with tempfile.NamedTemporaryFile(suffix='.zip', delete=False) as temp_zip:
             zip_path = Path(temp_zip.name)
@@ -189,21 +194,27 @@ async def download_selected(gifs: List[GifDownloadRequest]):
             for gif in gifs:
                 # Extract gif path and original filename from url
                 gif_path = gif.url.split('/')[-1].split('?')[0]
+                logger.info(f"Extracted path: {gif_path}")
+                
                 # Use the original filename (without any query parameters)
-                output_filename = gif_path.split('?')[0]
+                output_filename = gif_path
                 full_path = settings.GIFS_PATH / gif_path
                 
                 if not full_path.exists():
+                    logger.error(f"GIF not found: {full_path}")
                     continue
                 
                 # Create trimmed GIF if needed
                 if gif.start is not None and gif.end is not None:
                     clip = VideoFileClip(str(full_path))
+                    logger.info(f"Original duration: {clip.duration}, Trimming: {gif.start} to {gif.end}")
                     
                     # Adjust times relative to GIF duration
                     gif_duration = clip.duration
                     relative_start = (gif.start % gif_duration)
                     relative_end = min(gif.end % gif_duration, gif_duration)
+                    
+                    logger.info(f"Adjusted times: {relative_start} to {relative_end}")
                     
                     if relative_start >= relative_end:
                         relative_end = gif_duration
@@ -220,12 +231,14 @@ async def download_selected(gifs: List[GifDownloadRequest]):
                         
                         # Add to zip with original filename
                         zip_file.write(temp_path, output_filename)
+                        logger.info(f"Added trimmed GIF to zip: {output_filename}")
                         
                         # Clean up temp file
                         temp_path.unlink(missing_ok=True)
                 else:
                     # Add original GIF to zip
                     zip_file.write(full_path, output_filename)
+                    logger.info(f"Added original GIF to zip: {output_filename}")
         
         # Create background task for cleanup
         async def cleanup():
@@ -246,4 +259,23 @@ async def download_selected(gifs: List[GifDownloadRequest]):
         )
     except Exception as e:
         logger.error(f"Failed to create zip file: {e}")
-        raise HTTPException(500, "Failed to create zip file") 
+        raise HTTPException(500, "Failed to create zip file")
+
+@router.get("/gif-info/{gif_path:path}")
+async def get_gif_info(gif_path: str):
+    """Get information about a GIF file"""
+    full_path = settings.GIFS_PATH / gif_path
+    if not full_path.exists():
+        raise HTTPException(404, "GIF not found")
+    
+    try:
+        clip = VideoFileClip(str(full_path))
+        duration = clip.duration
+        clip.close()
+        
+        return {
+            "duration": duration
+        }
+    except Exception as e:
+        logger.error(f"Failed to get GIF info: {e}")
+        raise HTTPException(500, "Failed to get GIF information") 

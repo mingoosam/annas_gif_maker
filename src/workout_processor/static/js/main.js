@@ -157,8 +157,7 @@ function displayGifPreviews(movements) {
                     <div class="gif-info">
                         <div class="segment-name">${fileName}</div>
                         <div class="time-display">
-                            Start: <span class="start-time">${segment.start_time.toFixed(1)}s</span>
-                            End: <span class="end-time">${segment.end_time.toFixed(1)}s</span>
+                            <span>Original Segment: ${segment.start_time.toFixed(1)}s - ${segment.end_time.toFixed(1)}s</span>
                         </div>
                     </div>
                     <label class="checkbox-container">
@@ -174,39 +173,47 @@ function displayGifPreviews(movements) {
                         <span>Start</span>
                         <span>End</span>
                     </div>
-                    <input type="range" 
-                           class="trim-start" 
-                           min="${segment.start_time}" 
-                           max="${segment.end_time}" 
-                           step="0.1" 
-                           value="${segment.start_time}">
-                    <input type="range" 
-                           class="trim-end" 
-                           min="${segment.start_time}" 
-                           max="${segment.end_time}" 
-                           step="0.1" 
-                           value="${segment.end_time}">
+                    <input type="range" class="trim-start" min="0" max="1" step="0.1" value="0" disabled>
+                    <input type="range" class="trim-end" min="0" max="1" step="0.1" value="1" disabled>
                 </div>
             `;
             
             // Add trim control event listeners
             const startSlider = gifContainer.querySelector('.trim-start');
             const endSlider = gifContainer.querySelector('.trim-end');
-            const startTimeDisplay = gifContainer.querySelector('.start-time');
-            const endTimeDisplay = gifContainer.querySelector('.end-time');
             const img = gifContainer.querySelector('img');
 
             // Store original gif URL
             const originalGifUrl = img.src;
 
+            // Initialize sliders once we know the GIF duration
+            img.onload = async () => {
+                try {
+                    // Get GIF duration from server
+                    const response = await fetch(`/api/gif-info/${segment.gif_path}`);
+                    if (!response.ok) throw new Error('Failed to get GIF info');
+                    const gifInfo = await response.json();
+                    const duration = gifInfo.duration;
+                    
+                    // Update slider ranges with actual duration
+                    startSlider.min = 0;
+                    startSlider.max = duration;
+                    startSlider.value = 0;
+                    startSlider.disabled = false;
+                    
+                    endSlider.min = 0;
+                    endSlider.max = duration;
+                    endSlider.value = duration;
+                    endSlider.disabled = false;
+                } catch (error) {
+                    console.error('Failed to get GIF duration:', error);
+                }
+            };
+
             // Handle slider changes
             function updateTrim() {
                 const start = parseFloat(startSlider.value);
                 const end = parseFloat(endSlider.value);
-                
-                // Update time displays
-                startTimeDisplay.textContent = `${start.toFixed(1)}s`;
-                endTimeDisplay.textContent = `${end.toFixed(1)}s`;
                 
                 // Add a small delay before updating the GIF to prevent too many requests
                 if (updateTrim.timeout) {
@@ -267,14 +274,25 @@ document.getElementById('download-selected').addEventListener('click', async () 
         const startSlider = container.querySelector('.trim-start');
         const endSlider = container.querySelector('.trim-end');
         
+        // Get the original URL without any existing trim parameters
+        const originalUrl = img.src.split('?')[0];
+        
+        console.log('Selected GIF:', {
+            url: originalUrl,
+            start: parseFloat(startSlider.value),
+            end: parseFloat(endSlider.value)
+        });
+        
         return {
-            url: img.src,
+            url: originalUrl,
             start: parseFloat(startSlider.value),
             end: parseFloat(endSlider.value)
         };
     });
 
     if (selectedGifs.length === 0) return;
+
+    console.log('Sending download request:', selectedGifs);
 
     try {
         // Create zip file of selected GIFs
