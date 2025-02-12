@@ -64,46 +64,6 @@ document.getElementById('process-video').addEventListener('click', async () => {
     processingSection.style.display = 'block';
     
     try {
-        // Start progress event stream
-        const eventSource = new EventSource(`/api/progress/${videoId}`);
-        
-        // Handle connection opened
-        eventSource.onopen = () => {
-            console.log('SSE connection opened');
-        };
-        
-        // Handle messages
-        eventSource.onmessage = (event) => {
-            try {
-                const data = JSON.parse(event.data);
-                console.log('Progress update:', data); // Debug log
-                
-                if (data.step && typeof data.progress === 'number') {
-                    const progressBar = document.querySelector(`#${data.step}-progress`);
-                    if (progressBar) {
-                        progressBar.style.width = `${data.progress}%`;
-                        
-                        // Add processing class to status item
-                        const statusItem = progressBar.closest('.status-item');
-                        statusItem.classList.add('processing');
-                        
-                        if (data.progress === 100) {
-                            statusItem.classList.remove('processing');
-                            statusItem.classList.add('completed');
-                        }
-                    }
-                }
-            } catch (error) {
-                console.error('Error parsing progress data:', error);
-            }
-        };
-        
-        // Handle errors
-        eventSource.onerror = (error) => {
-            console.error('SSE error:', error);
-            eventSource.close();
-        };
-        
         // Send process request
         const response = await fetch('/api/process', {
             method: 'POST',
@@ -119,13 +79,8 @@ document.getElementById('process-video').addEventListener('click', async () => {
         const result = await response.json();
         displayGifPreviews(result.movements);
         
-        // Close event stream
-        eventSource.close();
-        
         // Hide processing status after completion
-        setTimeout(() => {
-            processingSection.style.display = 'none';
-        }, 2000);
+        processingSection.style.display = 'none';
     } catch (error) {
         console.error('Processing failed:', error);
         alert('Processing failed. Please try again.');
@@ -368,7 +323,9 @@ document.getElementById('download-selected').addEventListener('click', async () 
 
     if (selectedGifs.length === 0) return;
 
-    console.log('Sending download request:', selectedGifs);
+    // Show download status
+    const downloadStatus = document.getElementById('download-status');
+    downloadStatus.style.display = 'block';
 
     try {
         // Create zip file of selected GIFs
@@ -392,8 +349,14 @@ document.getElementById('download-selected').addEventListener('click', async () 
         a.click();
         document.body.removeChild(a);
         window.URL.revokeObjectURL(url);
+
+        // Hide download status after a short delay
+        setTimeout(() => {
+            downloadStatus.style.display = 'none';
+        }, 1000);
     } catch (error) {
         console.error('Download failed:', error);
         alert('Failed to download GIFs. Please try again.');
+        downloadStatus.style.display = 'none';
     }
 }); 

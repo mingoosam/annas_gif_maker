@@ -32,32 +32,17 @@
 
         <!-- Processing Status -->
         <section id="processing-status" style="display: none;">
-            <h2>Processing Video</h2>
             <div class="status-container">
-                <div class="status-item">
-                    <span>Extracting Audio</span>
-                    <div class="progress-container">
-                        <div class="progress-bar" id="audio-progress"></div>
-                    </div>
-                </div>
-                <div class="status-item">
-                    <span>Transcribing</span>
-                    <div class="progress-container">
-                        <div class="progress-bar" id="transcribe-progress"></div>
-                    </div>
-                </div>
-                <div class="status-item">
-                    <span>Detecting Segments</span>
-                    <div class="progress-container">
-                        <div class="progress-bar" id="detect-progress"></div>
-                    </div>
-                </div>
-                <div class="status-item">
-                    <span>Generating GIFs</span>
-                    <div class="progress-container">
-                        <div class="progress-bar" id="gif-progress"></div>
-                    </div>
-                </div>
+                <div class="status-message">Processing video...</div>
+                <div class="status-submessage">This will take a while. If only I could get a progress bar to work! 🫠</div>
+            </div>
+        </section>
+
+        <!-- Download Status -->
+        <section id="download-status" style="display: none;">
+            <div class="status-container">
+                <div class="status-message">Creating download...</div>
+                <div class="status-submessage">This will also take a minute 🤓</div>
             </div>
         </section>
 
