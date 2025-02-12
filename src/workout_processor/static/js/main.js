@@ -132,6 +132,25 @@ document.getElementById('process-video').addEventListener('click', async () => {
     }
 });
 
+// Move this function outside of displayGifPreviews (at the top level of the file)
+function replaceGifWithFirstFrame(img) {
+    // Create a canvas to capture the first frame
+    const canvas = document.createElement('canvas');
+    canvas.width = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+    canvas.style.width = '100%';
+    canvas.style.height = 'auto';
+    canvas.style.backgroundColor = '#fff';  // Add white background
+    
+    // Draw the current frame
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#fff';  // Set white background
+    ctx.fillRect(0, 0, canvas.width, canvas.height);  // Fill background
+    ctx.drawImage(img, 0, 0);
+    
+    return canvas;
+}
+
 // Display GIF previews
 function displayGifPreviews(movements) {
     const previewSection = document.getElementById('preview-section');
@@ -168,6 +187,16 @@ function displayGifPreviews(movements) {
                 </div>
                 <div class="gif-preview">
                     <img src="/api/download/${segment.gif_path}" alt="${fileName}">
+                    <video style="display: none;" 
+                           loop 
+                           muted 
+                           playsinline 
+                           autoplay
+                           class="preview-video"></video>
+                    <div class="loading-overlay" style="display: none;">
+                        <div class="spinner"></div>
+                        <div>Generating preview...</div>
+                    </div>
                 </div>
                 <div class="trim-controls">
                     <div class="slider-container">
@@ -189,10 +218,9 @@ function displayGifPreviews(movements) {
             const img = gifContainer.querySelector('img');
             const trimValues = gifContainer.querySelector('.trim-values');
 
-            // Store original gif URL and create preview image
+            // Store original gif URL
             const originalGifUrl = img.src;
             let currentDuration = 0;
-            let previewImg = null;
 
             // Initialize sliders once we know the GIF duration
             img.onload = async () => {
@@ -212,11 +240,6 @@ function displayGifPreviews(movements) {
                     endSlider.max = currentDuration;
                     endSlider.value = currentDuration;
                     endSlider.disabled = false;
-
-                    // Create preview image but don't replace the original
-                    previewImg = document.createElement('img');
-                    previewImg.style.display = 'none';
-                    img.parentNode.appendChild(previewImg);
                 } catch (error) {
                     console.error('Failed to get GIF duration:', error);
                 }
@@ -227,26 +250,56 @@ function displayGifPreviews(movements) {
             function updateTrim() {
                 const start = parseFloat(startSlider.value);
                 const end = parseFloat(endSlider.value);
+                const loadingOverlay = gifContainer.querySelector('.loading-overlay');
+                const video = gifContainer.querySelector('video');
                 
-                // Update time display
+                // Update time display in both cases
                 if (start === 0 && end === currentDuration) {
                     trimValues.textContent = 'Full GIF';
+                    img.style.display = 'block';
+                    video.style.display = 'none';
+                    video.pause();
+                    video.src = '';  // Clear the video source
+                    loadingOverlay.style.display = 'none';
                 } else {
+                    // Update trim values display immediately
                     trimValues.textContent = `${start.toFixed(1)}s - ${end.toFixed(1)}s`;
-                }
-                
-                // Add a small delay before updating the GIF to prevent too many requests
-                if (updateTimeout) {
-                    clearTimeout(updateTimeout);
-                }
-                
-                updateTimeout = setTimeout(() => {
-                    if (previewImg) {
-                        // Only update the preview image, keep original visible
-                        const trimmedUrl = `${originalGifUrl}?start=${start}&end=${end}&t=${Date.now()}`;
-                        previewImg.src = trimmedUrl;
+                    
+                    if (updateTimeout) {
+                        clearTimeout(updateTimeout);
                     }
-                }, 300);
+                    
+                    updateTimeout = setTimeout(() => {
+                        loadingOverlay.style.display = 'flex';
+                        const trimmedUrl = `${originalGifUrl}?start=${start}&end=${end}&t=${Date.now()}&preview=true`;
+                        
+                        video.src = trimmedUrl;
+                        video.onloadeddata = () => {
+                            loadingOverlay.style.display = 'none';
+                            img.style.display = 'none';
+                            video.style.display = 'block';
+                            
+                            // Ensure video plays properly
+                            const playVideo = async () => {
+                                try {
+                                    await video.play();
+                                } catch (err) {
+                                    console.log('Playback failed, retrying...', err);
+                                    // Retry playback after a short delay
+                                    setTimeout(playVideo, 100);
+                                }
+                            };
+                            playVideo();
+                        };
+                        
+                        video.onerror = () => {
+                            console.error('Video failed to load:', video.error);
+                            loadingOverlay.style.display = 'none';
+                            img.style.display = 'block';
+                            video.style.display = 'none';
+                        };
+                    }, 500);
+                }
             }
 
             // Ensure end slider can't go below start slider

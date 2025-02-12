@@ -120,7 +120,7 @@ async def process_video(request: ProcessingRequest):
 
 
 @router.get("/download/{gif_path:path}")
-async def download_gif(gif_path: str, start: float = None, end: float = None):
+async def download_gif(gif_path: str, start: float = None, end: float = None, preview: bool = False):
     """Download a specific GIF, optionally trimmed"""
     full_path = settings.GIFS_PATH / gif_path
     if not full_path.exists():
@@ -128,10 +128,7 @@ async def download_gif(gif_path: str, start: float = None, end: float = None):
     
     if start is not None and end is not None:
         try:
-            # Load the GIF
             clip = VideoFileClip(str(full_path))
-            
-            # Adjust start and end times relative to GIF duration
             gif_duration = clip.duration
             relative_start = (start % gif_duration)
             relative_end = min(end % gif_duration, gif_duration)
@@ -139,23 +136,35 @@ async def download_gif(gif_path: str, start: float = None, end: float = None):
             if relative_start >= relative_end:
                 relative_end = gif_duration
             
-            # Create trimmed version
             trimmed_clip = clip.subclip(relative_start, relative_end)
             
-            # Create temporary file
-            with tempfile.NamedTemporaryFile(suffix='.gif', delete=False) as temp_file:
+            with tempfile.NamedTemporaryFile(suffix='.mp4' if preview else '.gif', delete=False) as temp_file:
                 temp_path = Path(temp_file.name)
             
-            # Save trimmed GIF
-            trimmed_clip.write_gif(str(temp_path))
+            if preview:
+                # Generate MP4 preview instead of GIF
+                trimmed_clip.write_videofile(
+                    str(temp_path),
+                    fps=10,
+                    preset='ultrafast',
+                    codec='libx264',
+                    audio=False
+                )
+            else:
+                # Full quality GIF for download
+                trimmed_clip.write_gif(
+                    str(temp_path),
+                    fps=10,
+                    program='ffmpeg',
+                    opt='optimizeplus'
+                )
             
-            # Clean up
             clip.close()
             trimmed_clip.close()
             
             # Create background task for cleanup
             async def cleanup():
-                await asyncio.sleep(5)  # Wait a bit to ensure file has been sent
+                await asyncio.sleep(5)
                 try:
                     temp_path.unlink(missing_ok=True)
                 except Exception as e:
@@ -166,12 +175,12 @@ async def download_gif(gif_path: str, start: float = None, end: float = None):
             
             return FileResponse(
                 temp_path,
+                media_type='video/mp4' if preview else 'image/gif',
                 headers={'Content-Disposition': f'attachment; filename="{gif_path}"'},
                 background=background
             )
         except Exception as e:
-            logger.error(f"Failed to trim GIF: {e}")
-            # Fall back to original GIF
+            logger.error(f"Failed to trim media: {e}")
             return FileResponse(full_path)
     
     return FileResponse(full_path)
