@@ -1,0 +1,256 @@
+2025-02-11 15:45:18,318 - workout_processor - INFO - Starting workout video processing: /Users/andyvarner/Documents/dev/projects/anna/data/video/IMG_0095.MOV
+2025-02-11 15:45:18,318 - workout_processor - INFO - Extracting audio from /Users/andyvarner/Documents/dev/projects/anna/data/video/IMG_0095.MOV
+2025-02-11 15:45:21,574 - workout_processor - INFO - Audio saved to temp/audio.wav
+2025-02-11 15:45:21,575 - workout_processor - INFO - Transcribing audio from temp/audio.wav
+2025-02-11 15:46:06,708 - workout_processor - INFO - Transcription text saved to temp/transcript.txt
+2025-02-11 15:46:06,724 - workout_processor - INFO - Model result saved to temp/transcript.json
+2025-02-11 15:46:38,114 - workout_processor - INFO - Starting workout video processing: /Users/andyvarner/Documents/dev/projects/anna/data/video/IMG_0095.MOV
+2025-02-11 15:46:38,114 - workout_processor - INFO - Extracting audio from /Users/andyvarner/Documents/dev/projects/anna/data/video/IMG_0095.MOV
+2025-02-11 15:46:41,280 - workout_processor - INFO - Audio saved to temp/audio.wav
+2025-02-11 15:46:41,280 - workout_processor - INFO - Loading existing transcription from temp/transcript.json
+2025-02-11 15:46:41,418 - workout_processor - INFO - Found 2 segments for 'arm swings'
+2025-02-11 15:46:41,418 - workout_processor - INFO - Found 4 segments for 'chair squats'
+2025-02-11 15:46:41,418 - workout_processor - INFO - Found 7 segments for 'roll down and roll up'
+2025-02-11 15:46:41,418 - workout_processor - INFO - Found 3 segments for 'goblet squat'
+2025-02-11 15:46:41,418 - workout_processor - INFO - Found 3 segments for 'chest press'
+2025-02-11 15:46:41,418 - workout_processor - INFO - Found 4 segments for 'underhand row'
+2025-02-11 15:46:41,418 - workout_processor - INFO - Found 1 segments for 'farmer's carry'
+2025-02-11 15:46:41,418 - workout_processor - INFO - Generating GIFs from /Users/andyvarner/Documents/dev/projects/anna/data/video/IMG_0095.MOV
+2025-02-11 15:46:41,520 - workout_processor - INFO - Creating GIF: 01_arm_swings_01.gif
+2025-02-11 16:27:31,084 - workout_processor - INFO - Starting workout video processing: /Users/andyvarner/Documents/dev/projects/anna/data/video/IMG_0095.MOV
+2025-02-11 16:27:31,084 - workout_processor - INFO - Extracting audio from /Users/andyvarner/Documents/dev/projects/anna/data/video/IMG_0095.MOV
+2025-02-11 16:27:33,944 - workout_processor - INFO - Audio saved to temp/audio.wav
+2025-02-11 16:27:33,944 - workout_processor - INFO - Loading existing transcription from temp/transcript.json
+2025-02-11 16:27:34,169 - workout_processor - INFO - Found 2 segments for 'arm swings'
+2025-02-11 16:27:34,169 - workout_processor - INFO - Found 4 segments for 'chair squats'
+2025-02-11 16:27:34,169 - workout_processor - INFO - Found 7 segments for 'roll down and roll up'
+2025-02-11 16:27:34,169 - workout_processor - INFO - Found 3 segments for 'goblet squat'
+2025-02-11 16:27:34,169 - workout_processor - INFO - Found 3 segments for 'chest press'
+2025-02-11 16:27:34,169 - workout_processor - INFO - Found 4 segments for 'underhand row'
+2025-02-11 16:27:34,169 - workout_processor - INFO - Found 1 segments for 'farmer's carry'
+2025-02-11 16:27:34,169 - workout_processor - INFO - Generating GIFs from /Users/andyvarner/Documents/dev/projects/anna/data/video/IMG_0095.MOV
+2025-02-11 16:27:34,267 - workout_processor - INFO - Creating GIF: 01_arm_swings_01.gif
+2025-02-11 16:27:40,995 - workout_processor - INFO - Creating GIF: 01_arm_swings_02.gif
+2025-02-11 16:27:49,315 - workout_processor - INFO - GIF generation completed
+2025-02-11 17:07:35,467 - workout_processor - INFO - Starting workout video processing: temp/uploads/430dfe84-f017-45dd-8ccc-d7ebc7057f0e.MOV
+2025-02-11 17:07:35,468 - workout_processor - INFO - Extracting audio from temp/uploads/430dfe84-f017-45dd-8ccc-d7ebc7057f0e.MOV
+2025-02-11 17:07:38,277 - workout_processor - INFO - Audio saved to temp/audio.wav
+2025-02-11 17:07:38,278 - workout_processor - INFO - Loading existing transcription from temp/transcript.json
+2025-02-11 17:07:38,510 - workout_processor - INFO - Found 2 segments for 'arm swings'
+2025-02-11 17:07:38,510 - workout_processor - INFO - Found 4 segments for 'chair squats'
+2025-02-11 17:07:38,510 - workout_processor - INFO - Found 7 segments for 'roll down and roll up'
+2025-02-11 17:07:38,510 - workout_processor - INFO - Found 3 segments for 'goblet squat'
+2025-02-11 17:07:38,510 - workout_processor - INFO - Found 3 segments for 'chest press'
+2025-02-11 17:07:38,510 - workout_processor - INFO - Found 4 segments for 'underhand row'
+2025-02-11 17:07:38,510 - workout_processor - INFO - Found 1 segments for 'farmer's carry'
+2025-02-11 17:07:38,510 - workout_processor - INFO - Generating GIFs from temp/uploads/430dfe84-f017-45dd-8ccc-d7ebc7057f0e.MOV
+2025-02-11 17:07:38,607 - workout_processor - INFO - Creating GIF: 01_arm_swings_01.gif
+2025-02-11 17:07:44,859 - workout_processor - INFO - Creating GIF: 01_arm_swings_02.gif
+2025-02-11 17:07:53,336 - workout_processor - INFO - Creating GIF: 02_chair_squats_01.gif
+2025-02-11 17:08:02,322 - workout_processor - INFO - Creating GIF: 02_chair_squats_02.gif
+2025-02-11 17:08:10,243 - workout_processor - INFO - Creating GIF: 02_chair_squats_03.gif
+2025-02-11 17:08:16,314 - workout_processor - INFO - Creating GIF: 02_chair_squats_04.gif
+2025-02-11 17:08:22,762 - workout_processor - INFO - Creating GIF: 03_roll_down_and_roll_up_01.gif
+2025-02-11 17:08:28,537 - workout_processor - INFO - Creating GIF: 03_roll_down_and_roll_up_02.gif
+2025-02-11 17:08:36,919 - workout_processor - INFO - Creating GIF: 03_roll_down_and_roll_up_03.gif
+2025-02-11 17:08:46,767 - workout_processor - INFO - Creating GIF: 03_roll_down_and_roll_up_04.gif
+2025-02-11 17:08:56,471 - workout_processor - INFO - Creating GIF: 03_roll_down_and_roll_up_05.gif
+2025-02-11 17:09:07,500 - workout_processor - INFO - Creating GIF: 03_roll_down_and_roll_up_06.gif
+2025-02-11 17:09:12,926 - workout_processor - INFO - Creating GIF: 03_roll_down_and_roll_up_07.gif
+2025-02-11 17:09:23,645 - workout_processor - INFO - Creating GIF: 04_goblet_squat_01.gif
+2025-02-11 17:09:30,576 - workout_processor - INFO - Creating GIF: 04_goblet_squat_02.gif
+2025-02-11 17:09:40,559 - workout_processor - INFO - Creating GIF: 04_goblet_squat_03.gif
+2025-02-11 17:09:49,947 - workout_processor - INFO - Creating GIF: 05_chest_press_01.gif
+2025-02-11 17:09:56,872 - workout_processor - INFO - Creating GIF: 05_chest_press_02.gif
+2025-02-11 17:10:03,736 - workout_processor - INFO - Creating GIF: 05_chest_press_03.gif
+2025-02-11 17:10:16,256 - workout_processor - INFO - Creating GIF: 06_underhand_row_01.gif
+2025-02-11 17:10:24,501 - workout_processor - INFO - Creating GIF: 06_underhand_row_02.gif
+2025-02-11 17:10:37,986 - workout_processor - INFO - Creating GIF: 06_underhand_row_03.gif
+2025-02-11 17:10:52,708 - workout_processor - INFO - Creating GIF: 06_underhand_row_04.gif
+2025-02-11 17:11:01,737 - workout_processor - INFO - Creating GIF: 07_farmer's_carry_01.gif
+2025-02-11 17:11:14,934 - workout_processor - INFO - GIF generation completed
+2025-02-11 17:14:27,439 - workout_processor - INFO - Starting workout video processing: temp/uploads/b3c84cd7-847f-4a95-96c2-f3fe851dd0b6.MOV
+2025-02-11 17:14:27,440 - workout_processor - INFO - Extracting audio from temp/uploads/b3c84cd7-847f-4a95-96c2-f3fe851dd0b6.MOV
+2025-02-11 17:14:30,256 - workout_processor - INFO - Audio saved to temp/audio.wav
+2025-02-11 17:14:30,256 - workout_processor - INFO - Loading existing transcription from temp/transcript.json
+2025-02-11 17:14:30,327 - workout_processor - INFO - Found 2 segments for 'arm swings'
+2025-02-11 17:14:30,327 - workout_processor - INFO - Found 4 segments for 'chair squats'
+2025-02-11 17:14:30,327 - workout_processor - INFO - Generating GIFs from temp/uploads/b3c84cd7-847f-4a95-96c2-f3fe851dd0b6.MOV
+2025-02-11 17:14:30,430 - workout_processor - INFO - Creating GIF: 01_arm_swings_01.gif
+2025-02-11 17:14:36,796 - workout_processor - INFO - Creating GIF: 01_arm_swings_02.gif
+2025-02-11 17:14:45,447 - workout_processor - INFO - Creating GIF: 02_chair_squats_01.gif
+2025-02-11 17:14:54,552 - workout_processor - INFO - Creating GIF: 02_chair_squats_02.gif
+2025-02-11 17:15:02,589 - workout_processor - INFO - Creating GIF: 02_chair_squats_03.gif
+2025-02-11 17:15:08,720 - workout_processor - INFO - Creating GIF: 02_chair_squats_04.gif
+2025-02-11 17:15:15,250 - workout_processor - INFO - GIF generation completed
+2025-02-11 17:19:41,370 - workout_processor - INFO - Starting workout video processing: temp/uploads/8c70ea3c-3d00-4c20-b4ca-05d4c807c4f5.MOV
+2025-02-11 17:19:41,370 - workout_processor - INFO - Extracting audio from temp/uploads/8c70ea3c-3d00-4c20-b4ca-05d4c807c4f5.MOV
+2025-02-11 17:19:44,849 - workout_processor - INFO - Audio saved to temp/audio.wav
+2025-02-11 17:19:44,849 - workout_processor - INFO - Loading existing transcription from temp/transcript.json
+2025-02-11 17:19:44,920 - workout_processor - INFO - Found 2 segments for 'arm swings'
+2025-02-11 17:19:44,920 - workout_processor - INFO - Found 3 segments for 'goblet squat'
+2025-02-11 17:19:44,920 - workout_processor - INFO - Generating GIFs from temp/uploads/8c70ea3c-3d00-4c20-b4ca-05d4c807c4f5.MOV
+2025-02-11 17:19:45,097 - workout_processor - INFO - Creating GIF: 01_arm_swings_01.gif
+2025-02-11 17:19:51,528 - workout_processor - INFO - Creating GIF: 01_arm_swings_02.gif
+2025-02-11 17:20:00,254 - workout_processor - INFO - Creating GIF: 02_goblet_squat_01.gif
+2025-02-11 17:20:07,134 - workout_processor - INFO - Creating GIF: 02_goblet_squat_02.gif
+2025-02-11 17:20:17,065 - workout_processor - INFO - Creating GIF: 02_goblet_squat_03.gif
+2025-02-11 17:20:26,270 - workout_processor - INFO - GIF generation completed
+2025-02-11 17:23:23,887 - workout_processor - INFO - Starting workout video processing: temp/uploads/dd630bc1-9898-4047-a3a7-6aa4d50012e1.MOV
+2025-02-11 17:23:23,887 - workout_processor - INFO - Extracting audio from temp/uploads/dd630bc1-9898-4047-a3a7-6aa4d50012e1.MOV
+2025-02-11 17:23:27,352 - workout_processor - INFO - Audio saved to temp/audio.wav
+2025-02-11 17:23:27,352 - workout_processor - INFO - Loading existing transcription from temp/transcript.json
+2025-02-11 17:23:27,425 - workout_processor - INFO - Found 2 segments for 'arm swings'
+2025-02-11 17:23:27,425 - workout_processor - INFO - Found 3 segments for 'goblet squat'
+2025-02-11 17:23:27,425 - workout_processor - INFO - Generating GIFs from temp/uploads/dd630bc1-9898-4047-a3a7-6aa4d50012e1.MOV
+2025-02-11 17:23:27,600 - workout_processor - INFO - Creating GIF: 01_arm_swings_01.gif
+2025-02-11 17:23:34,059 - workout_processor - INFO - Creating GIF: 01_arm_swings_02.gif
+2025-02-11 17:23:42,737 - workout_processor - INFO - Creating GIF: 02_goblet_squat_01.gif
+2025-02-11 17:23:49,605 - workout_processor - INFO - Creating GIF: 02_goblet_squat_02.gif
+2025-02-11 17:23:59,433 - workout_processor - INFO - Creating GIF: 02_goblet_squat_03.gif
+2025-02-11 17:24:08,568 - workout_processor - INFO - GIF generation completed
+2025-02-11 17:25:59,987 - workout_processor - INFO - Starting workout video processing: temp/uploads/5e14fd46-4d1c-4cf1-b642-40147a3ab5ed.MOV
+2025-02-11 17:25:59,987 - workout_processor - INFO - Extracting audio from temp/uploads/5e14fd46-4d1c-4cf1-b642-40147a3ab5ed.MOV
+2025-02-11 17:26:02,741 - workout_processor - INFO - Audio saved to temp/audio.wav
+2025-02-11 17:26:02,741 - workout_processor - INFO - Loading existing transcription from temp/transcript.json
+2025-02-11 17:26:02,812 - workout_processor - INFO - Found 2 segments for 'arm swings'
+2025-02-11 17:26:02,812 - workout_processor - INFO - Found 3 segments for 'goblet squat'
+2025-02-11 17:26:02,812 - workout_processor - INFO - Generating GIFs from temp/uploads/5e14fd46-4d1c-4cf1-b642-40147a3ab5ed.MOV
+2025-02-11 17:26:02,911 - workout_processor - INFO - Creating GIF: 01_arm_swings_01.gif
+2025-02-11 17:26:09,308 - workout_processor - INFO - Creating GIF: 01_arm_swings_02.gif
+2025-02-11 17:26:17,983 - workout_processor - INFO - Creating GIF: 02_goblet_squat_01.gif
+2025-02-11 17:26:24,795 - workout_processor - INFO - Creating GIF: 02_goblet_squat_02.gif
+2025-02-11 17:26:34,581 - workout_processor - INFO - Creating GIF: 02_goblet_squat_03.gif
+2025-02-11 17:26:43,691 - workout_processor - INFO - GIF generation completed
+2025-02-11 17:35:39,991 - workout_processor - INFO - Starting workout video processing: temp/uploads/de8086b3-c93b-4384-b5eb-afcd9abf2a11.MOV
+2025-02-11 17:35:39,992 - workout_processor - INFO - Extracting audio from temp/uploads/de8086b3-c93b-4384-b5eb-afcd9abf2a11.MOV
+2025-02-11 17:35:42,773 - workout_processor - INFO - Audio saved to temp/audio.wav
+2025-02-11 17:35:42,773 - workout_processor - INFO - Loading existing transcription from temp/transcript.json
+2025-02-11 17:35:42,844 - workout_processor - INFO - Found 2 segments for 'arm swings'
+2025-02-11 17:35:42,844 - workout_processor - INFO - Found 3 segments for 'goblet squats'
+2025-02-11 17:35:42,844 - workout_processor - INFO - Generating GIFs from temp/uploads/de8086b3-c93b-4384-b5eb-afcd9abf2a11.MOV
+2025-02-11 17:35:42,942 - workout_processor - INFO - Creating GIF: 01_arm_swings_01.gif
+2025-02-11 17:35:49,309 - workout_processor - INFO - Creating GIF: 01_arm_swings_02.gif
+2025-02-11 17:35:57,975 - workout_processor - INFO - Creating GIF: 02_goblet_squats_01.gif
+2025-02-11 17:36:04,811 - workout_processor - INFO - Creating GIF: 02_goblet_squats_02.gif
+2025-02-11 17:36:14,578 - workout_processor - INFO - Creating GIF: 02_goblet_squats_03.gif
+2025-02-11 17:36:23,715 - workout_processor - INFO - GIF generation completed
+2025-02-11 17:37:06,237 - workout_processor - INFO - Starting workout video processing: temp/uploads/79654159-f828-4be4-84e9-2bde6f152a15.MOV
+2025-02-11 17:37:06,237 - workout_processor - INFO - Extracting audio from temp/uploads/79654159-f828-4be4-84e9-2bde6f152a15.MOV
+2025-02-11 17:37:09,798 - workout_processor - INFO - Audio saved to temp/audio.wav
+2025-02-11 17:37:09,798 - workout_processor - INFO - Loading existing transcription from temp/transcript.json
+2025-02-11 17:37:09,871 - workout_processor - INFO - Found 2 segments for 'arm swings'
+2025-02-11 17:37:09,871 - workout_processor - INFO - Found 3 segments for 'goblet squats'
+2025-02-11 17:37:09,871 - workout_processor - INFO - Generating GIFs from temp/uploads/79654159-f828-4be4-84e9-2bde6f152a15.MOV
+2025-02-11 17:37:10,065 - workout_processor - INFO - Creating GIF: 01_arm_swings_01.gif
+2025-02-11 17:37:16,551 - workout_processor - INFO - Creating GIF: 01_arm_swings_02.gif
+2025-02-11 17:37:25,352 - workout_processor - INFO - Creating GIF: 02_goblet_squats_01.gif
+2025-02-11 17:37:32,308 - workout_processor - INFO - Creating GIF: 02_goblet_squats_02.gif
+2025-02-11 17:37:42,205 - workout_processor - INFO - Creating GIF: 02_goblet_squats_03.gif
+2025-02-11 17:37:51,404 - workout_processor - INFO - GIF generation completed
+2025-02-11 17:39:33,737 - workout_processor - INFO - Starting workout video processing: temp/uploads/00c95f34-bf2a-4376-bda7-36f63c2420aa.MOV
+2025-02-11 17:39:33,737 - workout_processor - INFO - Extracting audio from temp/uploads/00c95f34-bf2a-4376-bda7-36f63c2420aa.MOV
+2025-02-11 17:39:37,145 - workout_processor - INFO - Audio saved to temp/audio.wav
+2025-02-11 17:39:37,146 - workout_processor - INFO - Loading existing transcription from temp/transcript.json
+2025-02-11 17:39:37,220 - workout_processor - INFO - Found 2 segments for 'arm swings'
+2025-02-11 17:39:37,220 - workout_processor - INFO - Found 3 segments for 'goblet squats'
+2025-02-11 17:39:37,220 - workout_processor - INFO - Generating GIFs from temp/uploads/00c95f34-bf2a-4376-bda7-36f63c2420aa.MOV
+2025-02-11 17:39:37,406 - workout_processor - INFO - Creating GIF: 01_arm_swings_01.gif
+2025-02-11 17:39:43,935 - workout_processor - INFO - Creating GIF: 01_arm_swings_02.gif
+2025-02-11 17:39:52,709 - workout_processor - INFO - Creating GIF: 02_goblet_squats_01.gif
+2025-02-11 17:39:59,674 - workout_processor - INFO - Creating GIF: 02_goblet_squats_02.gif
+2025-02-11 17:40:09,717 - workout_processor - INFO - Creating GIF: 02_goblet_squats_03.gif
+2025-02-11 17:40:18,995 - workout_processor - INFO - GIF generation completed
+2025-02-11 17:41:33,107 - workout_processor - INFO - Starting workout video processing: temp/uploads/68815ba7-53ec-4a33-adef-475b86c6ae74.MOV
+2025-02-11 17:41:33,107 - workout_processor - INFO - Extracting audio from temp/uploads/68815ba7-53ec-4a33-adef-475b86c6ae74.MOV
+2025-02-11 17:41:35,856 - workout_processor - INFO - Audio saved to temp/audio.wav
+2025-02-11 17:41:35,856 - workout_processor - INFO - Loading existing transcription from temp/transcript.json
+2025-02-11 17:41:35,928 - workout_processor - INFO - Found 2 segments for 'arm swings'
+2025-02-11 17:41:35,928 - workout_processor - INFO - Found 3 segments for 'goblet squats'
+2025-02-11 17:41:35,928 - workout_processor - INFO - Generating GIFs from temp/uploads/68815ba7-53ec-4a33-adef-475b86c6ae74.MOV
+2025-02-11 17:41:36,027 - workout_processor - INFO - Creating GIF: 01_arm_swings_01.gif
+2025-02-11 17:41:42,474 - workout_processor - INFO - Creating GIF: 01_arm_swings_02.gif
+2025-02-11 17:41:51,245 - workout_processor - INFO - Creating GIF: 02_goblet_squats_01.gif
+2025-02-11 17:41:58,095 - workout_processor - INFO - Creating GIF: 02_goblet_squats_02.gif
+2025-02-11 17:42:07,920 - workout_processor - INFO - Creating GIF: 02_goblet_squats_03.gif
+2025-02-11 17:42:17,043 - workout_processor - INFO - GIF generation completed
+2025-02-11 17:47:01,019 - workout_processor - INFO - Starting workout video processing: temp/uploads/61e8659d-9bab-4646-b33e-58d66e6b2816.MOV
+2025-02-11 17:47:01,019 - workout_processor - INFO - Extracting audio from temp/uploads/61e8659d-9bab-4646-b33e-58d66e6b2816.MOV
+2025-02-11 17:47:04,407 - workout_processor - INFO - Audio saved to temp/audio.wav
+2025-02-11 17:47:04,407 - workout_processor - INFO - Loading existing transcription from temp/transcript.json
+2025-02-11 17:47:04,478 - workout_processor - INFO - Found 2 segments for 'arm swings'
+2025-02-11 17:47:04,478 - workout_processor - INFO - Found 3 segments for 'goblet squats'
+2025-02-11 17:47:04,478 - workout_processor - INFO - Generating GIFs from temp/uploads/61e8659d-9bab-4646-b33e-58d66e6b2816.MOV
+2025-02-11 17:47:04,642 - workout_processor - INFO - Creating GIF: 01_arm_swings_01.gif
+2025-02-11 17:47:11,077 - workout_processor - INFO - Creating GIF: 01_arm_swings_02.gif
+2025-02-11 17:47:19,799 - workout_processor - INFO - Creating GIF: 02_goblet_squats_01.gif
+2025-02-11 17:47:26,639 - workout_processor - INFO - Creating GIF: 02_goblet_squats_02.gif
+2025-02-11 17:47:36,443 - workout_processor - INFO - Creating GIF: 02_goblet_squats_03.gif
+2025-02-11 17:47:45,585 - workout_processor - INFO - GIF generation completed
+2025-02-12 10:12:27,548 - workout_processor - INFO - Starting workout video processing: temp/uploads/0d62c702-9bfe-4200-a6c3-e30d224932af.MOV
+2025-02-12 10:12:27,548 - workout_processor - INFO - Extracting audio from temp/uploads/0d62c702-9bfe-4200-a6c3-e30d224932af.MOV
+2025-02-12 10:12:30,336 - workout_processor - INFO - Audio saved to temp/audio.wav
+2025-02-12 10:12:30,337 - workout_processor - INFO - Loading existing transcription from temp/transcript.json
+2025-02-12 10:12:30,407 - workout_processor - INFO - Found 2 segments for 'arm swings'
+2025-02-12 10:12:30,407 - workout_processor - INFO - Found 3 segments for 'goblet squats'
+2025-02-12 10:12:30,407 - workout_processor - INFO - Generating GIFs from temp/uploads/0d62c702-9bfe-4200-a6c3-e30d224932af.MOV
+2025-02-12 10:12:30,505 - workout_processor - INFO - Creating GIF: 01_arm_swings_01.gif
+2025-02-12 10:12:36,840 - workout_processor - INFO - Creating GIF: 01_arm_swings_02.gif
+2025-02-12 10:12:45,474 - workout_processor - INFO - Creating GIF: 02_goblet_squats_01.gif
+2025-02-12 10:12:52,289 - workout_processor - INFO - Creating GIF: 02_goblet_squats_02.gif
+2025-02-12 10:13:02,044 - workout_processor - INFO - Creating GIF: 02_goblet_squats_03.gif
+2025-02-12 10:13:11,112 - workout_processor - INFO - GIF generation completed
+2025-02-12 10:16:05,149 - workout_processor - INFO - Starting workout video processing: temp/uploads/a6136ead-8911-4be0-82e9-80ca4ae9e5c5.MOV
+2025-02-12 10:16:05,149 - workout_processor - INFO - Extracting audio from temp/uploads/a6136ead-8911-4be0-82e9-80ca4ae9e5c5.MOV
+2025-02-12 10:16:07,933 - workout_processor - INFO - Audio saved to temp/audio.wav
+2025-02-12 10:16:07,933 - workout_processor - INFO - Loading existing transcription from temp/transcript.json
+2025-02-12 10:16:08,004 - workout_processor - INFO - Found 2 segments for 'arm swings'
+2025-02-12 10:16:08,004 - workout_processor - INFO - Found 3 segments for 'goblet squats'
+2025-02-12 10:16:08,004 - workout_processor - INFO - Generating GIFs from temp/uploads/a6136ead-8911-4be0-82e9-80ca4ae9e5c5.MOV
+2025-02-12 10:16:08,103 - workout_processor - INFO - Creating GIF: 01_arm_swings_01.gif
+2025-02-12 10:16:14,539 - workout_processor - INFO - Creating GIF: 01_arm_swings_02.gif
+2025-02-12 10:16:23,319 - workout_processor - INFO - Creating GIF: 02_goblet_squats_01.gif
+2025-02-12 10:16:30,142 - workout_processor - INFO - Creating GIF: 02_goblet_squats_02.gif
+2025-02-12 10:16:39,966 - workout_processor - INFO - Creating GIF: 02_goblet_squats_03.gif
+2025-02-12 10:16:49,171 - workout_processor - INFO - GIF generation completed
+2025-02-12 10:22:23,539 - workout_processor - INFO - Starting workout video processing: temp/uploads/39f74814-c8c6-4b22-8ea5-63cbe94280e9.MOV
+2025-02-12 10:22:23,540 - workout_processor - INFO - Extracting audio from temp/uploads/39f74814-c8c6-4b22-8ea5-63cbe94280e9.MOV
+2025-02-12 10:22:26,342 - workout_processor - INFO - Audio saved to temp/audio.wav
+2025-02-12 10:22:26,342 - workout_processor - INFO - Loading existing transcription from temp/transcript.json
+2025-02-12 10:22:26,414 - workout_processor - INFO - Found 2 segments for 'arm swings'
+2025-02-12 10:22:26,414 - workout_processor - INFO - Found 3 segments for 'goblet squats'
+2025-02-12 10:22:26,414 - workout_processor - INFO - Generating GIFs from temp/uploads/39f74814-c8c6-4b22-8ea5-63cbe94280e9.MOV
+2025-02-12 10:22:26,515 - workout_processor - INFO - Creating GIF: 01_arm_swings_01.gif
+2025-02-12 10:22:32,935 - workout_processor - INFO - Creating GIF: 01_arm_swings_02.gif
+2025-02-12 10:22:41,626 - workout_processor - INFO - Creating GIF: 02_goblet_squats_01.gif
+2025-02-12 10:22:48,437 - workout_processor - INFO - Creating GIF: 02_goblet_squats_02.gif
+2025-02-12 10:22:58,248 - workout_processor - INFO - Creating GIF: 02_goblet_squats_03.gif
+2025-02-12 10:23:07,372 - workout_processor - INFO - GIF generation completed
+2025-02-12 10:26:01,216 - workout_processor - INFO - Starting workout video processing: temp/uploads/80a14c71-995a-4f69-8bde-c41ceb36438a.MOV
+2025-02-12 10:26:01,216 - workout_processor - INFO - Extracting audio from temp/uploads/80a14c71-995a-4f69-8bde-c41ceb36438a.MOV
+2025-02-12 10:26:03,967 - workout_processor - INFO - Audio saved to temp/audio.wav
+2025-02-12 10:26:03,967 - workout_processor - INFO - Loading existing transcription from temp/transcript.json
+2025-02-12 10:26:04,038 - workout_processor - INFO - Found 2 segments for 'arm swings'
+2025-02-12 10:26:04,038 - workout_processor - INFO - Found 3 segments for 'goblet squats'
+2025-02-12 10:26:04,039 - workout_processor - INFO - Generating GIFs from temp/uploads/80a14c71-995a-4f69-8bde-c41ceb36438a.MOV
+2025-02-12 10:26:04,138 - workout_processor - INFO - Creating GIF: 01_arm_swings_01.gif
+2025-02-12 10:26:10,552 - workout_processor - INFO - Creating GIF: 01_arm_swings_02.gif
+2025-02-12 10:26:19,238 - workout_processor - INFO - Creating GIF: 02_goblet_squats_01.gif
+2025-02-12 10:26:26,072 - workout_processor - INFO - Creating GIF: 02_goblet_squats_02.gif
+2025-02-12 10:26:35,842 - workout_processor - INFO - Creating GIF: 02_goblet_squats_03.gif
+2025-02-12 10:26:44,950 - workout_processor - INFO - GIF generation completed
+2025-02-12 10:32:38,035 - workout_processor - INFO - Starting workout video processing: temp/uploads/ce13733d-f3bf-4f4a-a448-26335c7b27a2.MOV
+2025-02-12 10:32:38,035 - workout_processor - INFO - Extracting audio from temp/uploads/ce13733d-f3bf-4f4a-a448-26335c7b27a2.MOV
+2025-02-12 10:32:40,821 - workout_processor - INFO - Audio saved to temp/audio.wav
+2025-02-12 10:32:40,821 - workout_processor - INFO - Loading existing transcription from temp/transcript.json
+2025-02-12 10:32:40,894 - workout_processor - INFO - Found 2 segments for 'arm swings'
+2025-02-12 10:32:40,894 - workout_processor - INFO - Found 3 segments for 'goblet squats'
+2025-02-12 10:32:40,894 - workout_processor - INFO - Generating GIFs from temp/uploads/ce13733d-f3bf-4f4a-a448-26335c7b27a2.MOV
+2025-02-12 10:32:40,996 - workout_processor - INFO - Creating GIF: 01_arm_swings_01.gif
+2025-02-12 10:32:47,382 - workout_processor - INFO - Creating GIF: 01_arm_swings_02.gif
+2025-02-12 10:32:56,052 - workout_processor - INFO - Creating GIF: 02_goblet_squats_01.gif
+2025-02-12 10:33:02,879 - workout_processor - INFO - Creating GIF: 02_goblet_squats_02.gif
+2025-02-12 10:33:12,690 - workout_processor - INFO - Creating GIF: 02_goblet_squats_03.gif
+2025-02-12 10:33:21,798 - workout_processor - INFO - GIF generation completed
+2025-02-12 10:33:46,336 - workout_processor - ERROR - Failed to create zip file: 'tuple' object has no attribute 'url'
+2025-02-12 10:33:50,482 - workout_processor - ERROR - Failed to create zip file: 'tuple' object has no attribute 'url'

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anna's GIF Maker</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Anna's GIF Maker</h1>
+        
+        <!-- Upload Section -->
+        <section id="upload-section">
+            <h2>1. Upload Video</h2>
+            <form id="upload-form">
+                <input type="file" id="video-file" accept=".mov,.mp4,.avi">
+                <div class="progress-container">
+                    <div class="progress-bar" id="upload-progress"></div>
+                </div>
+                <button type="submit">Upload</button>
+            </form>
+        </section>
+
+        <!-- Movements Section -->
+        <section id="movements-section" style="display: none;">
+            <h2>2. Define Segments</h2>
+            <div id="movements-list">
+                <input type="text" class="movement-input" placeholder="Enter movement">
+                <button id="add-movement">+ Add Segment</button>
+            </div>
+            <button id="process-video">Process Video</button>
+        </section>
+
+        <!-- Processing Status -->
+        <section id="processing-status" style="display: none;">
+            <h2>Processing Video</h2>
+            <div class="status-container">
+                <div class="status-item">
+                    <span>Extracting Audio</span>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="audio-progress"></div>
+                    </div>
+                </div>
+                <div class="status-item">
+                    <span>Transcribing</span>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="transcribe-progress"></div>
+                    </div>
+                </div>
+                <div class="status-item">
+                    <span>Detecting Segments</span>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="detect-progress"></div>
+                    </div>
+                </div>
+                <div class="status-item">
+                    <span>Generating GIFs</span>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="gif-progress"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preview Section -->
+        <section id="preview-section" style="display: none;">
+            <h2>3. Preview and Edit</h2>
+            <div id="gif-previews"></div>
+            <button id="download-selected" class="download-button" disabled>Download Selected GIFs</button>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery-section" style="display: none;">
+            <h2>4. Selected GIFs</h2>
+            <div id="selected-gifs" class="gallery-drop-zone">
+                <p>Drag GIFs here to select them</p>
+            </div>
+            <button id="download-all">Download Selected GIFs</button>
+        </section>
+    </div>
+    
+    <script src="{{ url_for('static', path='js/main.js') }}"></script>
+</body>
+</html> 
