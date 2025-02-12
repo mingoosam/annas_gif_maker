@@ -157,7 +157,8 @@ function displayGifPreviews(movements) {
                     <div class="gif-info">
                         <div class="segment-name">${fileName}</div>
                         <div class="time-display">
-                            <span>Original Segment: ${segment.start_time.toFixed(1)}s - ${segment.end_time.toFixed(1)}s</span>
+                            <div class="original-time">Original: ${segment.start_time.toFixed(1)}s - ${segment.end_time.toFixed(1)}s</div>
+                            <div class="trim-time">Selected: <span class="trim-values">Full GIF</span></div>
                         </div>
                     </div>
                     <label class="checkbox-container">
@@ -169,12 +170,16 @@ function displayGifPreviews(movements) {
                     <img src="/api/download/${segment.gif_path}" alt="${fileName}">
                 </div>
                 <div class="trim-controls">
-                    <div class="slider-labels">
-                        <span>Start</span>
-                        <span>End</span>
+                    <div class="slider-container">
+                        <div class="slider-labels">
+                            <span>Start</span>
+                            <span>End</span>
+                        </div>
+                        <div class="slider-track">
+                            <input type="range" class="trim-start" min="0" max="1" step="0.1" value="0" disabled>
+                            <input type="range" class="trim-end" min="0" max="1" step="0.1" value="1" disabled>
+                        </div>
                     </div>
-                    <input type="range" class="trim-start" min="0" max="1" step="0.1" value="0" disabled>
-                    <input type="range" class="trim-end" min="0" max="1" step="0.1" value="1" disabled>
                 </div>
             `;
             
@@ -182,48 +187,66 @@ function displayGifPreviews(movements) {
             const startSlider = gifContainer.querySelector('.trim-start');
             const endSlider = gifContainer.querySelector('.trim-end');
             const img = gifContainer.querySelector('img');
+            const trimValues = gifContainer.querySelector('.trim-values');
 
-            // Store original gif URL
+            // Store original gif URL and create preview image
             const originalGifUrl = img.src;
+            let currentDuration = 0;
+            let previewImg = null;
 
             // Initialize sliders once we know the GIF duration
             img.onload = async () => {
                 try {
-                    // Get GIF duration from server
                     const response = await fetch(`/api/gif-info/${segment.gif_path}`);
                     if (!response.ok) throw new Error('Failed to get GIF info');
                     const gifInfo = await response.json();
-                    const duration = gifInfo.duration;
+                    currentDuration = gifInfo.duration;
                     
                     // Update slider ranges with actual duration
                     startSlider.min = 0;
-                    startSlider.max = duration;
+                    startSlider.max = currentDuration;
                     startSlider.value = 0;
                     startSlider.disabled = false;
                     
                     endSlider.min = 0;
-                    endSlider.max = duration;
-                    endSlider.value = duration;
+                    endSlider.max = currentDuration;
+                    endSlider.value = currentDuration;
                     endSlider.disabled = false;
+
+                    // Create preview image but don't replace the original
+                    previewImg = document.createElement('img');
+                    previewImg.style.display = 'none';
+                    img.parentNode.appendChild(previewImg);
                 } catch (error) {
                     console.error('Failed to get GIF duration:', error);
                 }
             };
 
             // Handle slider changes
+            let updateTimeout = null;
             function updateTrim() {
                 const start = parseFloat(startSlider.value);
                 const end = parseFloat(endSlider.value);
                 
-                // Add a small delay before updating the GIF to prevent too many requests
-                if (updateTrim.timeout) {
-                    clearTimeout(updateTrim.timeout);
+                // Update time display
+                if (start === 0 && end === currentDuration) {
+                    trimValues.textContent = 'Full GIF';
+                } else {
+                    trimValues.textContent = `${start.toFixed(1)}s - ${end.toFixed(1)}s`;
                 }
-                updateTrim.timeout = setTimeout(() => {
-                    // Update GIF preview with trimmed version
-                    const trimmedUrl = `${originalGifUrl}?start=${start}&end=${end}`;
-                    img.src = trimmedUrl;
-                }, 200);  // 200ms delay
+                
+                // Add a small delay before updating the GIF to prevent too many requests
+                if (updateTimeout) {
+                    clearTimeout(updateTimeout);
+                }
+                
+                updateTimeout = setTimeout(() => {
+                    if (previewImg) {
+                        // Only update the preview image, keep original visible
+                        const trimmedUrl = `${originalGifUrl}?start=${start}&end=${end}&t=${Date.now()}`;
+                        previewImg.src = trimmedUrl;
+                    }
+                }, 300);
             }
 
             // Ensure end slider can't go below start slider

@@ -321,3 +321,94 @@
 2025-02-12 12:47:55,156 - workout_processor - INFO - Original duration: 5.5, Trimming: 1.1 to 5.5
 2025-02-12 12:47:55,156 - workout_processor - INFO - Adjusted times: 1.1 to 0.0
 2025-02-12 12:47:59,926 - workout_processor - INFO - Added trimmed GIF to zip: 01_arm_swing_02.gif
+2025-02-12 12:50:40,827 - workout_processor - INFO - Starting workout video processing: temp/uploads/811b8d47-b955-4621-9a88-25edd3655563.MOV
+2025-02-12 12:50:40,827 - workout_processor - INFO - Extracting audio from temp/uploads/811b8d47-b955-4621-9a88-25edd3655563.MOV
+2025-02-12 12:50:43,581 - workout_processor - INFO - Audio saved to temp/audio.wav
+2025-02-12 12:50:43,581 - workout_processor - INFO - Loading existing transcription from temp/transcript.json
+2025-02-12 12:50:43,651 - workout_processor - INFO - Found 2 segments for 'arm swings'
+2025-02-12 12:50:43,651 - workout_processor - INFO - Found 0 segments for 'goblet suat'
+2025-02-12 12:50:43,651 - workout_processor - INFO - Generating GIFs from temp/uploads/811b8d47-b955-4621-9a88-25edd3655563.MOV
+2025-02-12 12:50:43,747 - workout_processor - INFO - Creating GIF: 01_arm_swings_01.gif
+2025-02-12 12:50:50,061 - workout_processor - INFO - Creating GIF: 01_arm_swings_02.gif
+2025-02-12 12:50:58,741 - workout_processor - INFO - GIF generation completed
+2025-02-12 12:54:35,906 - workout_processor - INFO - Starting workout video processing: temp/uploads/c4ed4c56-f36f-4f57-80b3-b48b5bba6970.MOV
+2025-02-12 12:54:35,908 - workout_processor - INFO - Extracting audio from temp/uploads/c4ed4c56-f36f-4f57-80b3-b48b5bba6970.MOV
+2025-02-12 12:54:39,450 - workout_processor - INFO - Audio saved to temp/audio.wav
+2025-02-12 12:54:39,451 - workout_processor - INFO - Loading existing transcription from temp/transcript.json
+2025-02-12 12:54:39,489 - workout_processor - INFO - Found 2 segments for 'arm swings'
+2025-02-12 12:54:39,489 - workout_processor - INFO - Generating GIFs from temp/uploads/c4ed4c56-f36f-4f57-80b3-b48b5bba6970.MOV
+2025-02-12 12:54:39,683 - workout_processor - INFO - Creating GIF: 01_arm_swings_01.gif
+2025-02-12 12:54:46,155 - workout_processor - INFO - Creating GIF: 01_arm_swings_02.gif
+2025-02-12 12:54:54,908 - workout_processor - INFO - GIF generation completed
+2025-02-12 12:57:26,518 - workout_processor - INFO - Starting workout video processing: temp/uploads/08a07e2d-5e52-4794-96cc-d32208b7aa5d.MOV
+2025-02-12 12:57:26,519 - workout_processor - INFO - Extracting audio from temp/uploads/08a07e2d-5e52-4794-96cc-d32208b7aa5d.MOV
+2025-02-12 12:57:29,873 - workout_processor - INFO - Audio saved to temp/audio.wav
+2025-02-12 12:57:29,873 - workout_processor - INFO - Loading existing transcription from temp/transcript.json
+2025-02-12 12:57:29,914 - workout_processor - INFO - Found 2 segments for 'arm swings'
+2025-02-12 12:57:29,914 - workout_processor - INFO - Generating GIFs from temp/uploads/08a07e2d-5e52-4794-96cc-d32208b7aa5d.MOV
+2025-02-12 12:57:30,105 - workout_processor - INFO - Creating GIF: 01_arm_swings_01.gif
+2025-02-12 12:57:36,569 - workout_processor - INFO - Creating GIF: 01_arm_swings_02.gif
+2025-02-12 12:57:45,319 - workout_processor - INFO - GIF generation completed
+2025-02-12 12:58:11,279 - workout_processor - INFO - Received download request for 1 GIFs
+2025-02-12 12:58:11,279 - workout_processor - INFO - Processing GIF: http://127.0.0.1:8000/api/download/01_arm_swings_02.gif (start: 1.0, end: 5.5)
+2025-02-12 12:58:11,279 - workout_processor - INFO - Extracted path: 01_arm_swings_02.gif
+2025-02-12 12:58:11,865 - workout_processor - INFO - Original duration: 5.5, Trimming: 1.0 to 5.5
+2025-02-12 12:58:11,865 - workout_processor - INFO - Adjusted times: 1.0 to 0.0
+2025-02-12 12:58:16,724 - workout_processor - INFO - Added trimmed GIF to zip: 01_arm_swings_02.gif
+2025-02-12 12:58:56,367 - workout_processor - INFO - Starting workout video processing: temp/uploads/d35c5019-abf3-49c1-a71f-ffa16592183c.MOV
+2025-02-12 12:58:56,367 - workout_processor - INFO - Extracting audio from temp/uploads/d35c5019-abf3-49c1-a71f-ffa16592183c.MOV
+2025-02-12 12:58:59,749 - workout_processor - INFO - Audio saved to temp/audio.wav
+2025-02-12 12:58:59,749 - workout_processor - INFO - Loading existing transcription from temp/transcript.json
+2025-02-12 12:58:59,788 - workout_processor - INFO - Found 2 segments for 'arm swing'
+2025-02-12 12:58:59,788 - workout_processor - INFO - Generating GIFs from temp/uploads/d35c5019-abf3-49c1-a71f-ffa16592183c.MOV
+2025-02-12 12:58:59,949 - workout_processor - INFO - Creating GIF: 01_arm_swing_01.gif
+2025-02-12 12:59:06,436 - workout_processor - INFO - Creating GIF: 01_arm_swing_02.gif
+2025-02-12 12:59:15,208 - workout_processor - INFO - GIF generation completed
+2025-02-12 12:59:52,739 - workout_processor - INFO - Received download request for 1 GIFs
+2025-02-12 12:59:52,739 - workout_processor - INFO - Processing GIF: http://127.0.0.1:8000/api/download/01_arm_swing_02.gif (start: 1.5, end: 5.5)
+2025-02-12 12:59:52,740 - workout_processor - INFO - Extracted path: 01_arm_swing_02.gif
+2025-02-12 12:59:53,324 - workout_processor - INFO - Original duration: 5.5, Trimming: 1.5 to 5.5
+2025-02-12 12:59:53,324 - workout_processor - INFO - Adjusted times: 1.5 to 0.0
+2025-02-12 12:59:57,745 - workout_processor - INFO - Added trimmed GIF to zip: 01_arm_swing_02.gif
+2025-02-12 13:02:00,512 - workout_processor - INFO - Starting workout video processing: temp/uploads/8c80ec76-a794-466e-9389-8c06fa9fefe4.MOV
+2025-02-12 13:02:00,512 - workout_processor - INFO - Extracting audio from temp/uploads/8c80ec76-a794-466e-9389-8c06fa9fefe4.MOV
+2025-02-12 13:02:03,929 - workout_processor - INFO - Audio saved to temp/audio.wav
+2025-02-12 13:02:03,929 - workout_processor - INFO - Loading existing transcription from temp/transcript.json
+2025-02-12 13:02:03,969 - workout_processor - INFO - Found 2 segments for 'arm swings'
+2025-02-12 13:02:03,969 - workout_processor - INFO - Generating GIFs from temp/uploads/8c80ec76-a794-466e-9389-8c06fa9fefe4.MOV
+2025-02-12 13:02:04,143 - workout_processor - INFO - Creating GIF: 01_arm_swings_01.gif
+2025-02-12 13:02:10,604 - workout_processor - INFO - Creating GIF: 01_arm_swings_02.gif
+2025-02-12 13:02:19,348 - workout_processor - INFO - GIF generation completed
+2025-02-12 13:02:49,922 - workout_processor - INFO - Received download request for 1 GIFs
+2025-02-12 13:02:49,922 - workout_processor - INFO - Processing GIF: http://127.0.0.1:8000/api/download/01_arm_swings_02.gif (start: 2.0, end: 5.5)
+2025-02-12 13:02:49,922 - workout_processor - INFO - Extracted path: 01_arm_swings_02.gif
+2025-02-12 13:02:50,507 - workout_processor - INFO - Original duration: 5.5, Trimming: 2.0 to 5.5
+2025-02-12 13:02:50,508 - workout_processor - INFO - Adjusted times: 2.0 to 0.0
+2025-02-12 13:02:54,429 - workout_processor - INFO - Added trimmed GIF to zip: 01_arm_swings_02.gif
+2025-02-12 13:05:40,247 - workout_processor - INFO - Starting workout video processing: temp/uploads/5a87c420-f583-47cf-a249-0c0f76dc0239.MOV
+2025-02-12 13:05:40,247 - workout_processor - INFO - Extracting audio from temp/uploads/5a87c420-f583-47cf-a249-0c0f76dc0239.MOV
+2025-02-12 13:05:43,709 - workout_processor - INFO - Audio saved to temp/audio.wav
+2025-02-12 13:05:43,709 - workout_processor - INFO - Loading existing transcription from temp/transcript.json
+2025-02-12 13:05:43,746 - workout_processor - INFO - Found 2 segments for 'arm swings'
+2025-02-12 13:05:43,747 - workout_processor - INFO - Generating GIFs from temp/uploads/5a87c420-f583-47cf-a249-0c0f76dc0239.MOV
+2025-02-12 13:05:43,930 - workout_processor - INFO - Creating GIF: 01_arm_swings_01.gif
+2025-02-12 13:05:50,383 - workout_processor - INFO - Creating GIF: 01_arm_swings_02.gif
+2025-02-12 13:05:59,125 - workout_processor - INFO - GIF generation completed
+2025-02-12 13:06:15,991 - workout_processor - INFO - Received download request for 1 GIFs
+2025-02-12 13:06:15,991 - workout_processor - INFO - Processing GIF: http://127.0.0.1:8000/api/download/01_arm_swings_02.gif (start: 2.1, end: 5.5)
+2025-02-12 13:06:15,992 - workout_processor - INFO - Extracted path: 01_arm_swings_02.gif
+2025-02-12 13:06:16,568 - workout_processor - INFO - Original duration: 5.5, Trimming: 2.1 to 5.5
+2025-02-12 13:06:16,569 - workout_processor - INFO - Adjusted times: 2.1 to 0.0
+2025-02-12 13:06:20,332 - workout_processor - INFO - Added trimmed GIF to zip: 01_arm_swings_02.gif
+2025-02-12 13:06:46,397 - workout_processor - INFO - Received download request for 1 GIFs
+2025-02-12 13:06:46,397 - workout_processor - INFO - Processing GIF: http://127.0.0.1:8000/api/download/01_arm_swings_02.gif (start: 2.1, end: 4.9)
+2025-02-12 13:06:46,398 - workout_processor - INFO - Extracted path: 01_arm_swings_02.gif
+2025-02-12 13:06:46,992 - workout_processor - INFO - Original duration: 5.5, Trimming: 2.1 to 4.9
+2025-02-12 13:06:46,992 - workout_processor - INFO - Adjusted times: 2.1 to 4.9
+2025-02-12 13:06:50,170 - workout_processor - INFO - Added trimmed GIF to zip: 01_arm_swings_02.gif
+2025-02-12 13:07:24,795 - workout_processor - INFO - Received download request for 1 GIFs
+2025-02-12 13:07:24,795 - workout_processor - INFO - Processing GIF: http://127.0.0.1:8000/api/download/01_arm_swings_02.gif (start: 0.0, end: 4.9)
+2025-02-12 13:07:24,795 - workout_processor - INFO - Extracted path: 01_arm_swings_02.gif
+2025-02-12 13:07:25,372 - workout_processor - INFO - Original duration: 5.5, Trimming: 0.0 to 4.9
+2025-02-12 13:07:25,372 - workout_processor - INFO - Adjusted times: 0.0 to 4.9
+2025-02-12 13:07:30,554 - workout_processor - INFO - Added trimmed GIF to zip: 01_arm_swings_02.gif
