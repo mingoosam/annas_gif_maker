@@ -78,8 +78,8 @@ def get_movement_segments(
 
             if similarity >= similarity_threshold:
                 key_segments[movement].append({
-                    "start_time": segment["start"],
-                    "end_time": segment["end"],
+                    "start_time": segment["start"] - 2,
+                    "end_time": segment["end"] + 8,
                     "description": segment["text"],
                     "similarity_score": similarity,
                 })

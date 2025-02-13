@@ -299,6 +299,8 @@ function updateDownloadButton() {
 
 // Handle downloads
 document.getElementById('download-selected').addEventListener('click', async () => {
+    console.log('Download button clicked');
+    
     const selectedGifs = Array.from(document.querySelectorAll('.gif-selector:checked')).map(checkbox => {
         const container = checkbox.closest('.gif-container');
         const img = container.querySelector('img');
@@ -321,13 +323,15 @@ document.getElementById('download-selected').addEventListener('click', async () 
         };
     });
 
+    console.log('Total selected GIFs:', selectedGifs.length);
     if (selectedGifs.length === 0) return;
 
-    // Show download status
-    const downloadStatus = document.getElementById('download-status');
-    downloadStatus.style.display = 'block';
+    // Show download message
+    const downloadMessage = document.getElementById('download-message');
+    downloadMessage.style.display = 'block';
 
     try {
+        console.log('Sending download request...');
         // Create zip file of selected GIFs
         const response = await fetch('/api/download-selected', {
             method: 'POST',
@@ -336,6 +340,8 @@ document.getElementById('download-selected').addEventListener('click', async () 
             },
             body: JSON.stringify(selectedGifs)
         });
+
+        console.log('Response status:', response.status);
 
         if (!response.ok) throw new Error('Download failed');
 
@@ -350,13 +356,13 @@ document.getElementById('download-selected').addEventListener('click', async () 
         document.body.removeChild(a);
         window.URL.revokeObjectURL(url);
 
-        // Hide download status after a short delay
+        // Hide download message after a short delay
         setTimeout(() => {
-            downloadStatus.style.display = 'none';
+            downloadMessage.style.display = 'none';
         }, 1000);
     } catch (error) {
         console.error('Download failed:', error);
         alert('Failed to download GIFs. Please try again.');
-        downloadStatus.style.display = 'none';
+        downloadMessage.style.display = 'none';
     }
 }); 

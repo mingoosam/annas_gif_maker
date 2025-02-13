@@ -34,15 +34,7 @@
         <section id="processing-status" style="display: none;">
             <div class="status-container">
                 <div class="status-message">Processing video...</div>
-                <div class="status-submessage">This will take a while. If only I could get a progress bar to work! 🫠</div>
-            </div>
-        </section>
-
-        <!-- Download Status -->
-        <section id="download-status" style="display: none;">
-            <div class="status-container">
-                <div class="status-message">Creating download...</div>
-                <div class="status-submessage">This will also take a minute 🤓</div>
+                <div class="status-submessage">This will take a while. Progress bars are weirdly hard for this part 🫠</div>
             </div>
         </section>
 
@@ -51,16 +43,15 @@
             <h2>3. Preview and Edit</h2>
             <div id="gif-previews"></div>
             <button id="download-selected" class="download-button" disabled>Download Selected GIFs</button>
+            
+            <!-- New dedicated download message section -->
+            <div id="download-message" style="display: none;">
+                <div class="message-container">
+                    <div class="message-text">Creating download... This will take a minute 🤓</div>
+                </div>
+            </div>
         </section>
 
-        <!-- Gallery Section -->
-        <section id="gallery-section" style="display: none;">
-            <h2>4. Selected GIFs</h2>
-            <div id="selected-gifs" class="gallery-drop-zone">
-                <p>Drag GIFs here to select them</p>
-            </div>
-            <button id="download-all">Download Selected GIFs</button>
-        </section>
     </div>
     
     <script src="{{ url_for('static', path='js/main.js') }}"></script>
